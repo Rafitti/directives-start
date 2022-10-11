@@ -5,27 +5,22 @@ import {Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Rendere
 })
 export class MejordirectiveDirective implements OnInit {
   @Input() defaultColor: string = 'transparent';
-  @Input('MejordirectiveDirective') colorqueresalta: string = 'yellow';
+  @Input() colorqueresalta: string = 'green';
   @HostBinding('style.backgroundColor') backgroundColor: string;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
-
+   this.backgroundColor = this.defaultColor;
   }
-  @HostListener('mouseenter') mouseover(eventData: Event) {
-    // this.renderer.setStyle(this.elRef.nativeElement,
-    //   'background-color',
-    //   'blue');
-  }
-  @HostListener('mouseleave') m2(eventData: Event) {
+  @HostListener('mouseleave') mouseleave(eventData: Event) {
     // this.renderer.setStyle(this.elRef.nativeElement,
     //   'background-color',
     //   'transparent');
     // this.backgroundColor = 'transparent';
     this.backgroundColor = this.defaultColor;
   }
-  @HostListener('mouseover') mouseover2(eventData: Event) {
+  @HostListener('mouseenter') mouseover(eventData: Event) {
     // this.renderer.setStyle(this.elRef.nativeElement,
     //   'background-color',
     //   'red');

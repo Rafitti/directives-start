@@ -15,18 +15,30 @@
             {{impar}}
           </li>
         </div>
-        <div *ngIf="!onlyOdd">
+<!--        <div *ngIf="!onlyOdd">-->
+<!--          <li-->
+<!--            class="list-group-item"-->
+<!--            *ngFor="let par of EvenNumber"-->
+<!--            [ngClass]="{impar: par % 2 !==0}"-->
+<!--            [ngStyle]="{backgroundColor: par % 2 !==0 ? 'yellow' : 'transparent'}"  >-->
+<!--            {{par}}-->
+<!--          </li>-->
+<!--        </div>-->
+        <div *appAmenosque="onlyOdd">
           <li
             class="list-group-item"
             *ngFor="let par of EvenNumber"
-            [ngClass]="{impar: par %2 !==0}"
-            [ngStyle]="{backgroundColor:par %2 !==0 ? 'yellow' : 'transparent'}"  >
+            [ngClass]="{impar: par % 2 !==0}"
+            [ngStyle]="{backgroundColor: par % 2 !==0 ? 'yellow' : 'transparent'}"  >
             {{par}}
           </li>
         </div>
       </ul>
       <p appmarcador> Darle estilo con la directiva</p>
-      <p [appMejordirective]="'red'" [defaultcolor]="'yellow'"> Darle estilo con la directiva</p>
+      <p appMejordirective
+         [defaultColor]="'lightBlue'"
+         [colorqueresalta]="'red'"
+         > Darle estilo con la directiva</p>
     </div>
   </div>
 </div>

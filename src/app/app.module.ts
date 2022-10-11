@@ -4,14 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import {MarcadorDirective} from './marcador/marcador.directive';
+import { MarcadorDirective } from './marcador/marcador.directive';
 import { MejordirectiveDirective } from './MejorDirectiva/mejordirective.directive';
+import { AmenosqueDirective } from './amenosque.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarcadorDirective,
-    MejordirectiveDirective
+    MejordirectiveDirective,
+    AmenosqueDirective
   ],
   imports: [
     BrowserModule,
